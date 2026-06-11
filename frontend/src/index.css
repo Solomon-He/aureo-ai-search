@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+@import "highlight.js/styles/github-dark-dimmed.css";
+
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -81,6 +84,10 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    /* aureo 品牌金色 */
+    --gold: oklch(0.78 0.13 82);
+    --gold-strong: oklch(0.58 0.12 70);
+    --gold-glow: oklch(0.78 0.13 82 / 0.18);
 }
 
 .dark {
@@ -115,6 +122,15 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+    /* aureo 品牌金色（暗色下提亮） */
+    --gold: oklch(0.82 0.13 85);
+    --gold-strong: oklch(0.84 0.12 85);
+    --gold-glow: oklch(0.82 0.13 85 / 0.14);
+}
+
+@theme inline {
+    --color-gold: var(--gold);
+    --color-gold-strong: var(--gold-strong);
 }
 
 @layer base {
@@ -127,4 +143,12 @@
   html {
     @apply font-sans;
     }
+}
+
+/* 减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
