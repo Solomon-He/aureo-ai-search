@@ -1,4 +1,4 @@
-# ✶ aureo-ai-search
+<h1 align="center">✶ aureo-ai-search</h1>
 
 Perplexity 风格的 AI 搜索引擎：输入自然语言问题，系统自动联网搜索最新信息，由大模型综合分析后流式生成**带引用来源**的智能回答，同时展示完整搜索结果列表与相关问题推荐。
 
